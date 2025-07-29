@@ -1,0 +1,10 @@
+/*src/components/Navbar/navbar.module.css*/
+.navbar_container {
+  background-color: #2196f3;
+  color: white;
+  padding: 15px 20px;
+  font-size: 4rem;
+  font-weight: bold;
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
