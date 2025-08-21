@@ -1,23 +1,23 @@
 /* src/index.css */
 
-/* Import the Virgil font from Google Fonts */
-@import url('https://fonts.googleapis.com/css2?family=Virgil&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
 
 :root {
-  --background-color: #f8f9fa;
-  --font-color: #1d1d1d;
-  --card-background-color: #ffffff;
-  --border-color: #e0e0e0;
-  --shadow-color: #0000001a;
+  --background-gradient: linear-gradient(180deg, #f8f9fa 0%, #e9ecef 100%);
+  --card-background: #ffffff;
+  --font-color: #212529;
+  --font-color-light: #6c757d;
   --primary-color: #007bff;
-  --primary-hover-color: #0056b3;
-  --font-family: 'Virgil', sans-serif;
+  --shadow-color: rgba(0, 0, 0, 0.08);
+  --font-family: 'Poppins', sans-serif;
 }
 
 body {
   margin: 0;
   font-family: var(--font-family);
-  background-color: var(--background-color);
+  /* background-image: var(--background-gradient);*/
+  /* background-repeat: no-repeat;*/
+  /* min-height: 100vh; */
   color: var(--font-color);
 }
 

@@ -1,13 +1,17 @@
 import React from 'react';
 import Navbar from './components/Navbar';
-import Home from './components/Home';
+import Dashboard from './components/Dashboard';
+import AIChatbotButton from './components/AIChatbotButton';
 import './App.css';
 
 function App() {
   return (
     <div className="App">
       <Navbar />
-      <Home />
+      <main className="main-content">
+        <Dashboard />
+      </main>
+      <AIChatbotButton />
     </div>
   );
 }

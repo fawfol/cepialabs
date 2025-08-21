@@ -1,23 +1,30 @@
+/*src/components/Navbar,jsx*/
+/* travio logo name, notification and account/prodile sect*/
+
 import React from 'react';
 import './Navbar.css';
-import { IoNotificationsOutline } from 'react-icons/io5';
+import { IoNotifications, IoSearch, IoPersonCircleOutline } from 'react-icons/io5';
 
 const Navbar = () => {
   return (
-    <nav className="navbar-container">
-      <div className="navbar-logo">TripPlanner</div>
-      <div className="navbar-search">
+    <header className="navbar-container">
+      <div className="navbar-logo">
+        Travio
+      </div>
+      
+      <div className="navbar-search"> 
+        <IoSearch className="search-icon" />
         <input type="text" placeholder="Search trips, locations, or users..." />
       </div>
       <div className="navbar-actions">
-        <button className="navbar-icon-button">
-          <IoNotificationsOutline size={24} />
-        </button>
-        <div className="navbar-profile">
-          <span>JD</span>
+        <div className="notification-icon-wrapper">
+          <IoNotifications size={24} className="navbar-icon" /> 
+          <span className="notification-badge">3</span>
         </div>
+        {/* prrofile  account shortcut  */}
+        <IoPersonCircleOutline size={42} className="navbar-profile-icon" />
       </div>
-    </nav>
+    </header>
   );
 };
 

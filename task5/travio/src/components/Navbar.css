@@ -3,52 +3,78 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 1rem 2rem;
-  background-color: var(--card-background-color);
-  border-bottom: 2px solid var(--border-color);
+  padding: 1rem 2.5rem;
+  background-color: var(--card-background);
+  box-shadow: 0 4px 12px var(--shadow-color);
 }
 
 .navbar-logo {
-  font-size: 1.5rem;
-  font-weight: bold;
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: var(--primary-color);
 }
 
 .navbar-search {
-  flex-grow: 1;
-  margin: 0 2rem;
+  position: relative;
+  width: 450px;
 }
 
 .navbar-search input {
   width: 100%;
-  padding: 0.75rem 1rem;
+  padding: 0.7rem 1rem 0.7rem 2.5rem;
   border-radius: 20px;
-  border: 2px solid var(--border-color);
+  border: 1px solid #dee2e6;
   font-family: var(--font-family);
-  font-size: 1rem;
-  background-color: var(--background-color);
+  font-size: 0.95rem;
+  background-color: #f8f9fa;
+}
+
+.search-icon {
+  position: absolute;
+  left: 1rem;
+  top: 50%;
+  transform: translateY(-50%);
+  color: var(--font-color-light);
 }
 
 .navbar-actions {
   display: flex;
   align-items: center;
-  gap: 1rem;
+  gap: 1.5rem;
 }
 
-.navbar-icon-button {
-  background: none;
-  border: none;
+.notification-icon-wrapper {
+  position: relative;
+}
+
+.navbar-icon {
+  color: var(--font-color);
+  display: flex;
   cursor: pointer;
-  padding: 0.5rem;
 }
 
-.navbar-profile {
-  width: 40px;
-  height: 40px;
+.notification-badge {
+  position: absolute;
+  top: -5px;
+  right: -8px;
+  background-color: #dc3545;
+  color: white;
+  width: 18px;
+  height: 18px;
   border-radius: 50%;
-  background-color: #ced4da;
+  font-size: 12px;
   display: flex;
   align-items: center;
   justify-content: center;
-  font-weight: bold;
+  font-weight: 500;
+}
+
+.navbar-profile-icon {
+  color: var(--primary-color);
   cursor: pointer;
+  transition: transform 0.2s ease-in-out;
+}
+
+.navbar-profile-icon:hover {
+  transform: scale(1.1);
 }
