@@ -1,0 +1,25 @@
+/* src/components/Card.css */
+.feature-card {
+  background-color: var(--card-background-color);
+  border: 2px solid var(--border-color);
+  border-radius: 12px;
+  padding: 1.5rem;
+  box-shadow: 5px 5px 0px var(--shadow-color);
+  transition: transform 0.2s, box-shadow 0.2s;
+  cursor: pointer;
+}
+
+.feature-card:hover {
+  transform: translateY(-5px) translateX(-5px);
+  box-shadow: 10px 10px 0px var(--shadow-color);
+}
+
+.card-title {
+  margin-top: 0;
+  font-size: 1.25rem;
+}
+
+.card-description {
+  margin-bottom: 0;
+  color: #495057;
+}

@@ -1,0 +1,54 @@
+/* src/components/Navbar.css */
+.navbar-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem 2rem;
+  background-color: var(--card-background-color);
+  border-bottom: 2px solid var(--border-color);
+}
+
+.navbar-logo {
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+.navbar-search {
+  flex-grow: 1;
+  margin: 0 2rem;
+}
+
+.navbar-search input {
+  width: 100%;
+  padding: 0.75rem 1rem;
+  border-radius: 20px;
+  border: 2px solid var(--border-color);
+  font-family: var(--font-family);
+  font-size: 1rem;
+  background-color: var(--background-color);
+}
+
+.navbar-actions {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.navbar-icon-button {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0.5rem;
+}
+
+.navbar-profile {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: #ced4da;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  cursor: pointer;
+}
