@@ -1,0 +1,114 @@
+.panelContainer {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 65vh;
+  background: rgba(255, 255, 255, 0.15); /* translucent */
+  backdrop-filter: blur(12px) saturate(150%);
+  -webkit-backdrop-filter: blur(12px) saturate(150%);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  z-index: 1000;
+  border-radius: 20px 20px 0 0;
+  box-shadow: 0 -5px 20px rgba(0,0,0,0.15);
+  padding: 20px 30px;
+  
+  
+  /*animation setups */
+  transform: translateY(100%); /*start off-screen later mvoe to visible position*/
+  transition: transform 0.4s ease-in-out;
+}
+
+.panelContainer.open {
+  transform: translateY(0); 
+}
+
+.panelHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+ color: #f3feff;
+  font-weight: bold;
+  font-size: 1.5rem;
+  letter-spacing: 1px;
+  text-shadow: 0 0 8px rgba(255, 110, 199, 0.6);
+}
+
+.closeButton {
+  background: #f1f1f1;
+  border: none;
+  border-radius: 50px;
+  width: 40px;
+  height: 40px;
+
+  /*centering the "×" perfectlyis a headache dk why aint wroking now works */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 2rem;
+  cursor: pointer;
+  color: #555;
+  transition: all 0.2s ease;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
+
+.closeButton:hover {
+  background: #e0e0e0;
+  transform: scale(1.05);
+}
+
+
+.destinationsWrapper {
+  display: flex;
+  gap: 20px;
+  overflow-x: auto; /* horizontal scroll */
+  padding-bottom: 20px; /* space for scrollbar */
+}
+
+/* */
+.destinationsWrapper::-webkit-scrollbar {
+  display: none;
+}
+.destinationsWrapper {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.destinationCard {
+  flex: 0 0 280px; /*prevent cards from shrinking  under idk mysterious circumstances*/
+  width: 280px;
+  height: 350px;
+  background-color: #f9f9f9;
+  border-radius: 15px;
+  overflow: hidden;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.destinationCard:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 16px rgba(0,0,0,0.15);
+}
+
+.cardImage {
+  width: 100%;
+  height: 60%;
+  object-fit: cover;
+}
+
+.cardContent {
+  padding: 15px;
+}
+
+.cardName {
+  margin: 0 0 5px 0;
+  font-size: 1.2rem;
+  color: var(--secondary-color);
+}
+
+.cardDescription {
+  margin: 0;
+  font-size: 0.9rem;
+  color: #666;
+}
