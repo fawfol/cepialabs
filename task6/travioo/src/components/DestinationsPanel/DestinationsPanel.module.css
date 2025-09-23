@@ -64,34 +64,30 @@
   flex-grow: 1;
 }
 
-/* Horizontal scrolling on larger screens */
+/*horizontal srolling on larger screens */
 .destinationsWrapper {
   display: flex;
   gap: 20px;
-  overflow-x: auto; /* Added overflow-x to enable horizontal scrolling */
+  overflow-x: auto;
   padding-bottom: 20px;
 }
-
-/* Make the horizontal scrollbar completely transparent */
+/*delete scrollbar */
 .destinationsWrapper::-webkit-scrollbar {
-  height: 8px; /* Set a height to see the track */
+  height: 8px; 
 }
-
-/* The scrollbar track (the background) */
 .destinationsWrapper::-webkit-scrollbar-track {
   background: transparent;
 }
 
-/* The scrollbar handle (the part you drag) */
 .destinationsWrapper::-webkit-scrollbar-thumb {
-  background: rgba(255, 255, 255, 0.3); /* A subtle white-ish color */
+  background: rgba(255, 255, 255, 0.3);
   border-radius: 10px;
 }
 .destinationsWrapper::-webkit-scrollbar-thumb:hover {
-  background: rgba(255, 255, 255, 0.5); /* Lighter on hover */
+  background: rgba(255, 255, 255, 0.5);
 }
 
-/* Hide scrollbar for Firefox and IE */
+/*hide scrollbar for Firefox and IE or */
 .destinationsWrapper {
   -ms-overflow-style: none;
   scrollbar-width: none;
@@ -135,7 +131,7 @@
   color: #666;
 }
 
-/* Media Query for Mobile */
+/* Medquery for small screens like mobile */
 @media (max-width: 768px) {
   .panelContainer {
     height: 90vh;
