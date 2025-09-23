@@ -1,7 +1,7 @@
+/*src/components/DestinationPanels/DestinationsPanel.jsx */
 import React from 'react';
 import styles from './DestinationsPanel.module.css';
 
-//some madeup data for our destinationsn later maybe use api to fetch
 const destinationData = [
   { id: 1, name: 'Kyoto, Japan', description: 'Ancient temples and serene gardens.', imageUrl: 'https://picsum.photos/id/1041/400/400' },
   { id: 2, name: 'Santorini, Greece', description: 'Iconic blue domes and stunning sunsets.', imageUrl: 'https://picsum.photos/id/106/400/400' },
@@ -14,7 +14,6 @@ const destinationData = [
 
 const DestinationsPanel = ({ isOpen, onClose }) => {
   return (
-    //open class based on the isOpen" prop to trigger animation
     <div className={`${styles.panelContainer} ${isOpen ? styles.open : ''}`}>
       <div className={styles.panelHeader}>
         <h2>Explore Destinations</h2>
@@ -22,16 +21,19 @@ const DestinationsPanel = ({ isOpen, onClose }) => {
           &times;
         </button>
       </div>
-      <div className={styles.destinationsWrapper}>
-        {destinationData.map(dest => (
-          <div key={dest.id} className={styles.destinationCard}>
-            <img src={dest.imageUrl} alt={dest.name} className={styles.cardImage} />
-            <div className={styles.cardContent}>
-              <h3 className={styles.cardName}>{dest.name}</h3>
-              <p className={styles.cardDescription}>{dest.description}</p>
+      {/* wrapper for vertcical scrolling */}
+      <div className={styles.scrollableContent}>
+        <div className={styles.destinationsWrapper}>
+          {destinationData.map(dest => (
+            <div key={dest.id} className={styles.destinationCard}>
+              <img src={dest.imageUrl} alt={dest.name} className={styles.cardImage} />
+              <div className={styles.cardContent}>
+                <h3 className={styles.cardName}>{dest.name}</h3>
+                <p className={styles.cardDescription}>{dest.description}</p>
+              </div>
             </div>
-          </div>
-        ))}
+          ))}
+        </div>
       </div>
     </div>
   );

@@ -1,3 +1,4 @@
+/*src/components/Hero/Hero.jsx */
 import React, { useState } from 'react';
 import styles from './Hero.module.css';
 import DestinationsPanel from '../DestinationsPanel/DestinationsPanel';

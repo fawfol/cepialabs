@@ -1,3 +1,4 @@
+/*src/components/Header/Header.module.css */
 .header {
   position: absolute;
   top: 0;
@@ -33,11 +34,11 @@
 }
 
 .loginBtn, .signupBtn {
-  padding: 8px 22px;
+  padding: 10px 22px;
   border-radius: 50px;
   cursor: pointer;
   border: none;
-  font-size: 1rem;
+  font-size: 1.1rem;
   font-weight: 500;
   transition: all 0.3s ease-out;
 }
@@ -54,9 +55,9 @@
 }
 
 .signupBtn {
-  background-color: var(--primary-color);
+  background-color: #4fc3f7;
   color: var(--text-light);
-  border: 1px solid var(--primary-color);
+  border: 1px solid var(--secondary-color);
 }
 
 .signupBtn:hover {
