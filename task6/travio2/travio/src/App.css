@@ -1,19 +1,252 @@
-/* src/App.css */
-body, html, #root {
-  margin: 0;
-  padding: 0;
-  height: 100%;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  overflow: hidden;
+/* --- Main App Container --- */
+.app-container {
+    width: 100vw;
+    height: 100vh;
+    position: relative;
+    background-image: url('/src/assets/back.jpg');
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    flex-direction: column;
+    color: white;
 }
 
-.App {
-  width: 100vw;
-  height: 100vh;
-  position: relative;
-  background-image: url('./assets/back.jpg');
-  background-size: cover;
-  background-position: center;
-  background-color: rgba(0, 0, 0, 0.3);
-  background-blend-mode: multiply;
+.app-container::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(4px);
+    z-index: 1;
+}
+
+/* --- header --- */
+.header {
+    position: relative;
+    z-index: 10;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 50px;
+    background: rgba(0,0,0,0.2);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.logo {
+    font-family: 'Poppins', sans-serif;
+    font-size: 2rem;
+    font-weight: 700;
+    color: white;
+    text-shadow: 1px 1px 5px rgba(0,0,0,0.5);
+}
+
+.auth-button {
+    font-family: 'Poppins', sans-serif;
+    background-color: #368F8B;
+    color: white;
+    border: none;
+    padding: 12px 24px;
+    border-radius: 50px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+}
+
+.auth-button:hover {
+    transform: translateY(-2px);
+    background-color: #2a6e6b;
+    box-shadow: 0 8px 25px rgba(54, 143, 139, 0.5);
+}
+
+/* --- main content area --- */
+.main-content {
+    flex-grow: 1;
+    position: relative;
+    z-index: 5;
+    display: flex;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+
+
+.landing-view {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    gap: 50px;
+    padding: 20px;
+    margin-left: 30px;
+    position: relative;
+    z-index: 2;
+}
+
+.landing-content {
+    flex: 1;
+    max-width: 500px;
+    text-align: left;
+    animation: slideInLeft 0.8s ease forwards;
+}
+
+@keyframes slideInLeft {
+    from { opacity: 0; transform: translateX(-30px); }
+    to { opacity: 1; transform: translateX(0); }
+}
+
+.landing-content h1 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 2.8rem;
+    text-shadow: 2px 2px 8px rgba(0,0,0,0.5);
+}
+
+.landing-content p {
+    font-size: 1.1rem;
+    line-height: 1.7;
+    opacity: 0.9;
+}
+
+.carousel-wrapper {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    animation: fadeInRight 0.8s ease forwards;
+    position: relative;
+    z-index: 1;
+}
+
+.carousel-container::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to left, rgba(0,0,0,0.7) 0%, rgba(0,0,0,0) 30%);
+    border-radius: 20px;
+    pointer-events: none;
+    z-index: 2;
+}
+
+@keyframes fadeInRight {
+     from { opacity: 0; transform: scale(0.95); }
+     to { opacity: 1; transform: scale(1); }
+}
+
+/* --- carousel --- */
+.carousel-container {
+    width: 90%;
+    max-width: 500px;
+    height: 70vh;
+    max-height: 450px;
+    position: relative;
+    perspective: 1000px;
+}
+
+.carousel-slide {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border-radius: 20px;
+    overflow: hidden;
+    transition: transform 0.6s ease-in-out, opacity 0.6s ease-in-out;
+    box-shadow: 0 15px 40px rgba(0,0,0,0.5);
+}
+
+.carousel-slide img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.slide-caption {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: linear-gradient(to top, rgba(0,0,0,0.8), transparent);
+    color: white;
+    padding: 40px 20px 20px;
+    font-size: 1.5rem;
+    font-weight: 600;
+    font-family: 'Poppins', sans-serif;
+}
+
+.carousel-nav {
+    position: absolute;
+    bottom: -60px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 15px;
+}
+
+.carousel-nav button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: rgba(255, 255, 255, 0.15);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    color: white;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    font-size: 1.8rem;
+    cursor: pointer;
+    transition: all 0.3s ease, transform 0.2s ease;
+    backdrop-filter: blur(8px);
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
+}
+
+.carousel-nav button:hover {
+    background: #368F8B;
+    border-color: #368F8B;
+    transform: scale(1.1);
+    box-shadow: 0 10px 25px rgba(54, 143, 139, 0.5);
+}
+
+
+/* --- auth page integration --- */
+.auth-page-container {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    animation: fadeIn 0.5s ease forwards;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: scale(0.98); }
+    to { opacity: 1; transform: scale(1); }
+}
+
+.auth-close-btn {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    background: rgba(255,255,255,0.1);
+    border: none;
+    color: rgba(255,255,255,0.7);
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    font-size: 1rem;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: all 0.3s ease;
+    z-index: 10;
+}
+.auth-close-btn:hover {
+    background: #368F8B;
+    color: white;
 }
