@@ -4,14 +4,9 @@ import './AuthPage.css';
 const AuthPage = () => {
   const [currentPage, setCurrentPage] = useState('login');
 
-  const handleNav = (e, page) => {
-    e.preventDefault();
-    setCurrentPage(page);
-  };
-
   return (
     <div className={`auth-page-wrapper ${currentPage}`}>
-      {/* Login Page */}
+      {/* LOGIN PAGE */}
       <div className="page-section login-section">
         <div className="content-panel">
           <h1>Around the world with Travio</h1>
@@ -27,9 +22,9 @@ const AuthPage = () => {
             <input type="password" placeholder="Password" />
             <button className="primary-btn">Log in</button>
             <div className="form-links">
-              <a href="#" onClick={(e) => handleNav(e, 'forgot')}>Forgot password?</a>
-              <span className="separator">·</span>
-              <a href="#" onClick={(e) => handleNav(e, 'signup')}>Sign up</a>
+              <a href="#" onClick={() => setCurrentPage('forgot')}>Forgot password?</a>
+              <span className="separator"> · </span>
+              <a href="#" onClick={() => setCurrentPage('signup')}>Sign up</a>
             </div>
             <div className="social-login">
               <p>— or sign in with —</p>
@@ -44,7 +39,7 @@ const AuthPage = () => {
         </div>
       </div>
 
-      {/* Signup Page */}
+      {/* SIGNUP PAGE */}
       <div className="page-section signup-section">
         <div className="form-panel">
           <div className="form-card">
@@ -55,7 +50,10 @@ const AuthPage = () => {
             <input type="password" placeholder="Password" />
             <button className="primary-btn">Sign Up</button>
             <div className="form-links">
-              <p>Already have an account? <a href="#" onClick={(e) => handleNav(e, 'login')}>Log in</a></p>
+              <p>
+                Already have an account?{" "}
+                <a href="#" onClick={() => setCurrentPage('login')}>Log in</a>
+              </p>
             </div>
             <div className="social-login">
               <p>— or sign up with socials —</p>
@@ -76,7 +74,7 @@ const AuthPage = () => {
         </div>
       </div>
 
-      {/* Forgot Password Page */}
+      {/* FORGOT PASSWORD PAGE */}
       <div className="page-section forgot-section">
         <div className="form-panel form-panel-center">
           <div className="form-card">
@@ -85,9 +83,9 @@ const AuthPage = () => {
             <input type="email" placeholder="you@example.com" />
             <button className="primary-btn">Send OTP</button>
             <div className="form-links form-links-full">
-              <a href="#" onClick={(e) => handleNav(e, 'login')}>Log In</a>
+              <a href="#" onClick={() => setCurrentPage('login')}>Log In</a>
               <span className="separator">·</span>
-              <a href="#" onClick={(e) => handleNav(e, 'signup')}>Sign Up</a>
+              <a href="#" onClick={() => setCurrentPage('signup')}>Sign Up</a>
             </div>
           </div>
         </div>
