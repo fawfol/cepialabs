@@ -14,8 +14,8 @@ const AuthPage = ({ onClose }) => { // Accept onClose as a prop
       {/* LOGIN PAGE */}
       <div className="page-section login-section">
         <div className="content-panel">
-            <h1>Around the world with Travio</h1>
-            <p>Discover new adventures, connect with people, and explore the globe with us.</p>
+            <h1>Welcome back to Travio</h1>
+            <p>Continue your journey with us. Discover new destinations, plan trips, and explore the world at your fingertips.</p>
         </div>
         <div className="form-panel">
             <div className="form-card">
@@ -84,7 +84,7 @@ const AuthPage = ({ onClose }) => { // Accept onClose as a prop
                 <button className="auth-close-btn" onClick={onClose}>×</button>
                 <h2>Forgot Password</h2>
                 <p className="card-subtitle">Reset your account password in a few simple steps</p>
-                <input type="email" placeholder="you@example.com" />
+                <input type="email" placeholder="your123@email.com" />
                 <button className="primary-btn">Send OTP</button>
                 <div className="form-links form-links-full">
                     <a href="#" onClick={handleLinkClick('login')}>Log In</a>
