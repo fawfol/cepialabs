@@ -4,11 +4,11 @@ import './App.css';
 
 // --- mock data for carousel ---
 const destinations = [
-    { id: 1, name: 'Santorini, Greece', image: '/photolib/santorini.jpeg' },
-    { id: 2, name: 'Kyoto, Japan', image: '/photolib/kyoto.jpeg' },
-    { id: 3, name: 'Hallstatt, Austria', image: '/photolib/halsatt.jpeg' },
-    { id: 4, name: 'Bora Bora, French Polynesia', image: '/photolib/borabora.jpeg' },
-    { id: 5, name: 'Amalfi Coast, Italy', image: '/photolib/amalfi.jpeg' }
+    { id: 1, name: 'Santorini, Greece', image: './photolib/santorini.jpeg' },
+    { id: 2, name: 'Kyoto, Japan', image: './photolib/kyoto.jpeg' },
+    { id: 3, name: 'Hallstatt, Austria', image: './photolib/halsatt.jpeg' },
+    { id: 4, name: 'Bora Bora, French Polynesia', image: './photolib/borabora.jpeg' },
+    { id: 5, name: 'Amalfi Coast, Italy', image: './photolib/amalfi.jpeg' }
 ];
 
 // --- header component ---
