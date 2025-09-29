@@ -1,97 +1,102 @@
 import React, { useState } from 'react';
 import './AuthPage.css';
 
-const AuthPage = ({ onClose }) => { // Accept onClose as a prop
+const AuthPage = ({ onClose }) => {
   const [currentPage, setCurrentPage] = useState('login');
+  const [closing, setClosing] = useState(false);
 
   const handleLinkClick = (page) => (e) => {
     e.preventDefault();
-    setCurrentPage(page);
+    setClosing(true);
+    setTimeout(() => {
+      setCurrentPage(page);
+      setClosing(false);
+    }, 300); // match fade-out transition time
   };
 
   return (
-    <div className={`auth-page-wrapper ${currentPage}`}>
+    <div className={`auth-page-wrapper ${currentPage} ${closing ? 'closing' : ''}`}>
       {/* LOGIN PAGE */}
       <div className="page-section login-section">
         <div className="content-panel">
-            <h1>Welcome back to Travio</h1>
-            <p>Continue your journey with us. Discover new destinations, plan trips, and explore the world at your fingertips.</p>
+          <h1>WELCOME TO TRAVIO</h1>
+          <p>Go on Journey with us. \n Discover new destinations, plan trips, and explore the world at your fingertips.</p>
         </div>
         <div className="form-panel">
-            <div className="form-card">
-                <button className="auth-close-btn" onClick={onClose}>×</button>
-                <h2>Log in</h2>
-                <p className="card-subtitle">Enter your credentials to access your account</p>
-                <input type="email" placeholder="your123@email.com" />
-                <input type="password" placeholder="Password" />
-                <button className="primary-btn">Log in</button>
-                <div className="form-links">
-                    <a href="#" onClick={handleLinkClick('forgot')}>Forgot password?</a>
-                    <span className="separator"> · </span>
-                    <a href="#" onClick={handleLinkClick('signup')}>Sign up</a>
-                </div>
-                <div className="social-login">
-                    <p>— or sign in with —</p>
-                    <div className="social-icons">
-                        <i className="fab fa-twitter"></i>
-                        <i className="fab fa-facebook-f"></i>
-                        <i className="fab fa-linkedin-in"></i>
-                        <i className="fab fa-google"></i>
-                    </div>
-                </div>
+          <div className="form-card">
+            <button className="auth-close-btn" onClick={onClose}>×</button>
+            <h2>Log in</h2>
+            <p className="card-subtitle">Enter your credentials to access your account</p>
+            <input type="email" placeholder="your123@email.com" />
+            <input type="password" placeholder="Password" />
+            <button className="primary-btn">Log in</button>
+            <div className="form-links">
+              <a href="#" onClick={handleLinkClick('forgot')}>Forgot password?</a>
+              <span className="separator"> · </span>
+              <a href="#" onClick={handleLinkClick('signup')}>Sign up</a>
             </div>
+            <div className="social-login">
+              <p>— or sign in with —</p>
+              <div className="social-icons">
+                <i className="fab fa-twitter"></i>
+                <i className="fab fa-facebook-f"></i>
+                <i className="fab fa-linkedin-in"></i>
+                <i className="fab fa-google"></i>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
 
       {/* SIGNUP PAGE */}
       <div className="page-section signup-section">
         <div className="content-panel">
-            <h1>Join Travio and Explore the World</h1>
-            <p>Sign up today to discover new adventures, connect with fellow travelers, and start your journey.</p>
+          <h1>Join Travio and Explore the World</h1>
+          <p>Sign up today to discover new adventures, connect with fellow travelers, and start your journey.</p>
         </div>
         <div className="form-panel">
-            <div className="form-card">
-                <button className="auth-close-btn" onClick={onClose}>×</button>
-                <h2>Sign up</h2>
-                <p className="card-subtitle">Join us today! It only takes a minute</p>
-                <input type="text" placeholder="Full Name" />
-                <input type="email" placeholder="your123@email.com" />
-                <input type="password" placeholder="Password" />
-                <button className="primary-btn">Sign Up</button>
-                <div className="form-links">
-                    <p>
-                        Already have an account?{" "}
-                        <a href="#" onClick={handleLinkClick('login')}>Log in</a>
-                    </p>
-                </div>
-                <div className="social-login">
-                    <p>— or sign up with socials —</p>
-                    <div className="social-icons">
-                        <i className="fab fa-twitter"></i>
-                        <i className="fab fa-facebook-f"></i>
-                        <i className="fab fa-linkedin-in"></i>
-                        <i className="fab fa-google"></i>
-                    </div>
-                </div>
+          <div className="form-card">
+            <button className="auth-close-btn" onClick={onClose}>×</button>
+            <h2>Sign up</h2>
+            <p className="card-subtitle">Join us today! It only takes a minute</p>
+            <input type="text" placeholder="Full Name" />
+            <input type="email" placeholder="your123@email.com" />
+            <input type="password" placeholder="Password" />
+            <button className="primary-btn">Sign Up</button>
+            <div className="form-links">
+              <p>
+                Already have an account?{" "}
+                <a href="#" onClick={handleLinkClick('login')}>Log in</a>
+              </p>
             </div>
+            <div className="social-login">
+              <p>— or sign up with socials —</p>
+              <div className="social-icons">
+                <i className="fab fa-twitter"></i>
+                <i className="fab fa-facebook-f"></i>
+                <i className="fab fa-linkedin-in"></i>
+                <i className="fab fa-google"></i>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
 
       {/* FORGOT PASSWORD PAGE */}
       <div className="page-section forgot-section">
         <div className="form-panel form-panel-center">
-            <div className="form-card">
-                <button className="auth-close-btn" onClick={onClose}>×</button>
-                <h2>Forgot Password</h2>
-                <p className="card-subtitle">Reset your account password in a few simple steps</p>
-                <input type="email" placeholder="your123@email.com" />
-                <button className="primary-btn">Send OTP</button>
-                <div className="form-links form-links-full">
-                    <a href="#" onClick={handleLinkClick('login')}>Log In</a>
-                    <span className="separator">·</span>
-                    <a href="#" onClick={handleLinkClick('signup')}>Sign Up</a>
-                </div>
+          <div className="form-card">
+            <button className="auth-close-btn" onClick={onClose}>×</button>
+            <h2>Forgot Password</h2>
+            <p className="card-subtitle">Reset your account password in a few simple steps</p>
+            <input type="email" placeholder="your123@email.com" />
+            <button className="primary-btn">Send OTP</button>
+            <div className="form-links form-links-full">
+              <a href="#" onClick={handleLinkClick('login')}>Log In</a>
+              <span className="separator">·</span>
+              <a href="#" onClick={handleLinkClick('signup')}>Sign Up</a>
             </div>
+          </div>
         </div>
       </div>
     </div>
